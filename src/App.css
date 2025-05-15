@@ -1,107 +1,54 @@
 ::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+  width: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00000044;
-    border-radius: 10px;
+  background: #00000044;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #00000023;
+  background: #00000023;
 }
 
-@keyframes glow-pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.05);
-        opacity: 0.85;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+.clip-pentagon {
+  clip-path: polygon(
+    0px 0px,
+    100% 0px,
+    100% calc(100% - 50px),
+    calc(100% - 50px) 100%,
+    0px 100%
+  );
 }
 
-@keyframes neon-pulse {
-    0% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
-
-    50% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    100% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
+.responsive {
+  padding-inline: 190px;
 }
 
-@keyframes neon-glow-pulse {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
-
-    50% {
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    100% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.shadow-neon-text-glow {
-    text-shadow: 0 0 12px #ffffff, 0 0 15px #ffffff;
+@media screen and (max-width: 1745px) {
+  .responsive {
+    padding-inline: 140px;
+  }
 }
 
-.text-neon {
-    color: #ffffff;
+@media screen and (max-width: 1650px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.shadow-neon {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-}
-
-.shadow-neon-soft {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.animate-glow-pulse {
-    animation: glow-pulse 1.5s infinite alternate;
-}
-
-.animate-neon-glow {
-    animation: neon-pulse 1.5s infinite alternate;
-}
-
-.animate-neon-glow-pulse {
-    animation: neon-glow-pulse 1.5s infinite alternate;
-}
-
-input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 12px;
-    width: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-input[type='range']::-moz-range-thumb {
-    height: 12px;
-    width: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
+@media screen and (max-width: 960px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

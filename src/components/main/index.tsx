@@ -6,7 +6,7 @@ import Vector2ImageLink from "/src/assets/vector-2.png";
 
 const Main = ({ children }: Props) => {
   return (
-    <div className="relative pt-24 py-10 h-[calc(100vh)] overflow-y-scroll justify-center flex flex-col text-xl px-60 bg-[#6EC5C3]">
+    <div className="relative pt-32 py-10 h-[calc(100vh)] overflow-y-scroll justify-center flex flex-col text-xl max-xl:!px-14 max-lg:!px-4 responsive bg-[#6EC5C3]">
       <img
         src={Zombie1ImageLink}
         alt="zombie1"
@@ -33,7 +33,7 @@ const Main = ({ children }: Props) => {
 };
 
 Main.Container = function mainContainer({ children }: Props) {
-  return <div className="w-full gap-4">{children}</div>;
+  return <div className="w-full h-full overflow-y-scroll">{children}</div>;
 };
 
 export default Main;
