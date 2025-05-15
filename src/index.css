@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: rgba(0, 234, 255, 0.2);
+  --color-accent-light: #00eaff;
+  --font-orbitron: light;
+}
+
+body {
+  color: #ffffff;
+}

@@ -1,0 +1,107 @@
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00000044;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00000023;
+}
+
+@keyframes glow-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes neon-glow-pulse {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.shadow-neon-text-glow {
+    text-shadow: 0 0 12px #ffffff, 0 0 15px #ffffff;
+}
+
+.text-neon {
+    color: #ffffff;
+}
+
+.shadow-neon {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.shadow-neon-soft {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.animate-glow-pulse {
+    animation: glow-pulse 1.5s infinite alternate;
+}
+
+.animate-neon-glow {
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+.animate-neon-glow-pulse {
+    animation: neon-glow-pulse 1.5s infinite alternate;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
