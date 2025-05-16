@@ -52,3 +52,36 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.backgroundFirst {
+  background: linear-gradient(
+    to bottom,
+    #fbe2a8 0%,
+    #fff4db 80%,
+    #fff4db00 100%
+  );
+}
+
+.backgroundSecond {
+  background: linear-gradient(
+    to bottom,
+    #d0e8f6 0%,
+    #ebfaff 80%,
+    #ebf9fe00 100%
+  );
+}
+
+.backgroundThird {
+  background: linear-gradient(
+    to bottom,
+    #e9d9b7 0%,
+    #fdf4e3 80%,
+    #ebf9fe00 100%
+  );
+}
+
+@media screen and (max-width: 690px) {
+  .userCards {
+    display: none;
+  }
+}

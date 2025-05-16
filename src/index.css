@@ -6,6 +6,16 @@
   --font-orbitron: light;
 }
 
+:root {
+  --color-accent: rgba(0, 234, 255, 0.2);
+  --color-accent-light: #00eaff;
+  --font-orbitron: light;
+
+  /* Set the font-family globally */
+  --default-font-family: "Microsoft YaHei UI", "Microsoft YaHei";
+}
+
 body {
   color: #000000;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei";
 }

@@ -33,7 +33,7 @@ const Main = ({ children }: Props) => {
 };
 
 Main.Container = function mainContainer({ children }: Props) {
-  return <div className="w-full h-full overflow-y-scroll">{children}</div>;
+  return <div className="w-full h-full overflow-y-scroll z-1">{children}</div>;
 };
 
 export default Main;
