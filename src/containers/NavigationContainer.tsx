@@ -7,7 +7,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 
 import ImageLink from "/src/assets/logo.png";
-import KolscanIconLink from "/src/assets/kolscanIcon.svg";
+import PumpScanIconLink from "/src/assets/kolscanIcon.svg";
 import { PiListBold } from "react-icons/pi";
 import { useState } from "react";
 import Button from "../components/buttons/Button";
@@ -35,7 +35,7 @@ const NavigationContainer = () => {
         >
           <img src={ImageLink} alt="logo" className="w-12 h-12" />
           <h3 className="text-[32px] font-bold text-[#000000] hidden lg:flex">
-            Kolscan
+            Pumpscan
           </h3>
         </div>
         <div className="md:block hidden">
@@ -61,7 +61,7 @@ const NavigationContainer = () => {
         <div className="flex justify-start items-center w-55 h-10 border border-[#252525] rounded-full overflow-hidden">
           <div className="flex items-center justify-between h-full w-21.5 p-2">
             <div className="w-5 h-5 flex justify-center items-center">
-              <img src={KolscanIconLink} alt="" className="w-4 h-4" />
+              <img src={PumpScanIconLink} alt="" className="w-4 h-4" />
             </div>
             <h3 className="text-black text-[16px]">0</h3>
             <RiRefreshLine className="text-[16px] text-[#BFBFBF]" />
