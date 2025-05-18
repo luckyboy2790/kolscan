@@ -1,11 +1,14 @@
 import UserProfile from "/src/assets/userProfile.png";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const UserCard = ({ number }: { number: number }) => {
+const UserCard = ({ number, id }: { number: number; id: string }) => {
+  const navigate = useNavigate();
+
   return (
     <div
-      className={`w-[194px] h-[256px] rounded-[5px] flex flex-col gap-2 px-4 py-6
+      className={`w-[194px] h-[256px] rounded-[5px] flex flex-col gap-2 px-4 py-6 cursor-pointer
       ${
         number === 1
           ? "backgroundFirst"
@@ -13,6 +16,7 @@ const UserCard = ({ number }: { number: number }) => {
           ? "backgroundSecond"
           : "backgroundThird"
       } relative`}
+      onClick={() => navigate(`/account/${id}`)}
     >
       <div className="absolute w-full h-[26px] -top-[13px] right-0 flex justify-center">
         <div className="w-[29px] h-[27px] relative">

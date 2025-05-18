@@ -85,3 +85,11 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .userDetailButtons {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}

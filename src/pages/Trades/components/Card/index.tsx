@@ -1,6 +1,8 @@
 import { FaRegStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 type CardType = {
+  id: number;
   createdBy: String;
   timeAgo: String;
   marketCap: String;
@@ -10,8 +12,15 @@ type CardType = {
 };
 
 const Card = ({ card }: { card: CardType }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="relative h-44">
+    <div
+      className="relative h-44 cursor-pointer"
+      onClick={() => {
+        navigate(`/account/${card.id}`);
+      }}
+    >
       <div className="h-full bg-white clip-pentagon rounded-bl-[60px] rounded-tr-[60px] rounded-tl-xl p-1.5 flex justify-between">
         <div className="h-full w-36 bg-[url(/src/assets/cardImage.avif)] rounded-bl-[55px] rounded-tl-[14px] bg-cover relative bg-center">
           <div className="w-0 h-0 border-b-[26px] border-l-[26px] border-b-transparent border-l-black absolute -top-[0.8px] -left-[0.8px] rounded-tl-[14px]"></div>

@@ -2,9 +2,11 @@
 import { FaXTwitter } from "react-icons/fa6";
 import UserProfile from "/src/assets/userProfile.png";
 import { FaTelegramPlane } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 type CardData = {
   number: number;
+  id: number;
   username: string;
   handle: string;
   twitter: boolean;
@@ -19,8 +21,12 @@ type CardComponentProps = {
 };
 
 const CardComponent = ({ data }: CardComponentProps) => {
+  const navigate = useNavigate();
   return (
-    <div className="w-full flex sm:flex-row flex-col justify-between items-center p-3 relative rounded-[5px] sm:h-16 h-auto gap-4 bg-white border border-[#DDDDDD]">
+    <div
+      className="w-full flex sm:flex-row flex-col justify-between items-center p-3 relative rounded-[5px] sm:h-16 h-auto gap-4 bg-white border border-[#DDDDDD] cursor-pointer"
+      onClick={() => navigate(`/account/${data.id}`)}
+    >
       <div className="w-0 h-0 border-b-[26px] border-l-[26px] border-b-transparent border-l-black absolute -top-[0.8px] -left-[0.8px] rounded-tl-[5px]"></div>
       <div className="md:pl-10 flex justify-start gap-4 items-center">
         <div className="relative w-9 h-9 flex items-center justify-center text-white font-bold">

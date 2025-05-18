@@ -108,8 +108,8 @@ const NavigationContainer = () => {
               </Navigation.NavItem>
             ))}
           </Navigation.Nav>
-          <Button>Search</Button>
-          <Button>Setting</Button>
+          <Button type="link">Search</Button>
+          <Button type="link">Setting</Button>
         </div>
       </div>
     </Navigation>

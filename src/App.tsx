@@ -5,6 +5,7 @@ import "./App.css";
 import { useTitle } from "./hooks";
 import Trades from "./pages/Trades";
 import Leaderboard from "./pages/Leaderboard";
+import UserDetail from "./pages/UserDetail";
 
 const App = () => {
   useTitle();
@@ -15,6 +16,7 @@ const App = () => {
         <Route index element={<Navigate to="/trades" replace />} />
         <Route path="trades" element={<Trades />} />
         <Route path="leaderboard" element={<Leaderboard />} />
+        <Route path="account/:id" element={<UserDetail />} />
       </Route>
     </Routes>
   );

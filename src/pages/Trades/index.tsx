@@ -5,6 +5,7 @@
 // import SecuritySectionCard from "./components/Security/SecuritySectionCard";
 // import WeatherCard from "./components/WeatherTme/WeatherCard";
 
+import Button from "../../components/buttons/Button";
 import Card from "./components/Card";
 
 const cardData = Array.from({ length: 12 }, (_, i) => ({
@@ -29,9 +30,7 @@ const Trades = () => {
           </div>
           <h3 className="text-black font-bold text-6">Realtime Trades</h3>
         </div>
-        <button className="h-[35px] w-[145px] border border-[#252525] rounded-[3px] text-black font-bold text-[18px] cursor-pointer">
-          Filter Wallets
-        </button>
+        <Button type="primary">Filter Wallets</Button>
       </div>
       <div className="h-auto flex-1 max-lg:pl-0 pl-10 card gap-6">
         {cardData.map((card) => (

@@ -7,6 +7,7 @@ import UserCard from "./components/UserCard";
 const leaderboardData = [
   {
     number: 1,
+    id: 1,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -17,6 +18,7 @@ const leaderboardData = [
   },
   {
     number: 2,
+    id: 2,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -27,6 +29,7 @@ const leaderboardData = [
   },
   {
     number: 3,
+    id: 3,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -37,6 +40,7 @@ const leaderboardData = [
   },
   {
     number: 4,
+    id: 4,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -47,6 +51,7 @@ const leaderboardData = [
   },
   {
     number: 5,
+    id: 5,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -57,6 +62,7 @@ const leaderboardData = [
   },
   {
     number: 6,
+    id: 6,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -67,6 +73,7 @@ const leaderboardData = [
   },
   {
     number: 7,
+    id: 7,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -77,6 +84,7 @@ const leaderboardData = [
   },
   {
     number: 8,
+    id: 8,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -87,6 +95,7 @@ const leaderboardData = [
   },
   {
     number: 9,
+    id: 9,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -97,6 +106,7 @@ const leaderboardData = [
   },
   {
     number: 10,
+    id: 10,
     username: "Heyitsyolo",
     handle: "65paNE",
     twitter: true,
@@ -133,13 +143,13 @@ const Leaderboard = () => {
 
       <div className="w-full flex justify-center items-center gap-7 userCards">
         <div className="h-[280px] flex items-end">
-          <UserCard number={2} />
+          <UserCard number={2} id={"2"} />
         </div>
         <div className="h-[280px] flex items-start">
-          <UserCard number={1} />
+          <UserCard number={1} id={"1"} />
         </div>
         <div className="h-[280px] flex items-end">
-          <UserCard number={3} />
+          <UserCard number={3} id={"3"} />
         </div>
       </div>
 
