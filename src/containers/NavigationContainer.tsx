@@ -5,12 +5,15 @@ import { IoSearch } from "react-icons/io5";
 import { RiRefreshLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
-
-import ImageLink from "/src/assets/logo.png";
-import PumpScanIconLink from "/src/assets/kolscanIcon.svg";
 import { PiListBold } from "react-icons/pi";
 import { useState } from "react";
 import Button from "../components/buttons/Button";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
+
+import ImageLink from "/src/assets/logo.png";
+import PumpScanIconLink from "/src/assets/kolscanIcon.svg";
+import { TiTimes } from "react-icons/ti";
 
 const pages = [
   { name: "Trades", to: "/trades" },
@@ -19,10 +22,11 @@ const pages = [
 
 const NavigationContainer = () => {
   const path = window.location.pathname;
-
   const navigate = useNavigate();
-
   const [isShow, setIsShow] = useState(false);
+  const { connected, publicKey, disconnect } = useWallet();
+
+  const shortAddress = publicKey ? `${publicKey.toBase58().slice(0, 6)}` : "";
 
   return (
     <Navigation>
@@ -42,15 +46,9 @@ const NavigationContainer = () => {
           <Navigation.Nav>
             {pages.map(({ name, to }) => (
               <Navigation.NavItem key={name}>
-                {to === path ? (
-                  <ButtonLink to={to} active={true}>
-                    {name}
-                  </ButtonLink>
-                ) : (
-                  <ButtonLink to={to} active={false}>
-                    {name}
-                  </ButtonLink>
-                )}
+                <ButtonLink to={to} active={to === path}>
+                  {name}
+                </ButtonLink>
               </Navigation.NavItem>
             ))}
           </Navigation.Nav>
@@ -58,18 +56,26 @@ const NavigationContainer = () => {
       </div>
       <div className="flex justify-end items-center gap-4.5">
         <IoSearch className="text-[#BFBFBF] text-[32px] hidden md:block" />
-        <div className="flex justify-start items-center w-55 h-10 border border-[#252525] rounded-full overflow-hidden">
-          <div className="flex items-center justify-between h-full w-21.5 p-2">
-            <div className="w-5 h-5 flex justify-center items-center">
-              <img src={PumpScanIconLink} alt="" className="w-4 h-4" />
+        {connected ? (
+          <div className="flex justify-start items-center w-55 h-10 border border-[#252525] rounded-full overflow-hidden">
+            <div className="flex items-center justify-between h-full w-21.5 p-2">
+              <div className="w-5 h-5 flex justify-center items-center">
+                <img src={PumpScanIconLink} alt="" className="w-4 h-4" />
+              </div>
+              <h3 className="text-black text-[16px]">0</h3>
+              <RiRefreshLine className="text-[16px] text-[#BFBFBF]" />
             </div>
-            <h3 className="text-black text-[16px]">0</h3>
-            <RiRefreshLine className="text-[16px] text-[#BFBFBF]" />
+            <div className="flex-1 h-full bg-[#252525] flex justify-center items-center gap-1">
+              <h3 className="text-[18px] text-[#ffffff]">{shortAddress}</h3>
+              <TiTimes
+                className="text-[18px] text-white cursor-pointer hover:opacity-75"
+                onClick={() => disconnect()}
+              />
+            </div>
           </div>
-          <div className="flex-1 h-full bg-[#252525] flex justify-center items-center">
-            <h3 className="text-[18px] text-[#ffffff]">qYac4M X</h3>
-          </div>
-        </div>
+        ) : (
+          <WalletMultiButton className="!bg-[#252525] !text-white !rounded-full !h-10 !px-4 !text-sm hover:opacity-80" />
+        )}
         <IoSettingsOutline className="text-[#BFBFBF] text-[32px] hidden md:block" />
         {isShow ? (
           <IoCloseSharp

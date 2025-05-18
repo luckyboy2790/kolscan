@@ -3,7 +3,6 @@ import UserProfile from "/src/assets/userProfile.png";
 import { FaTelegramPlane } from "react-icons/fa";
 import Button from "../../components/buttons/Button";
 import DayRadioGroup from "./components/DayRadio";
-import { FaPlay } from "react-icons/fa";
 import AmountCard from "./components/AmountCard";
 
 const holdings = [
